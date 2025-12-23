@@ -14,7 +14,7 @@ export default function AdminDashboard() {
   const fetchStudents = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/students/all", {
+      const res = await fetch("https://mern-backend-mzup.onrender.com/api/students/all", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -32,7 +32,7 @@ export default function AdminDashboard() {
     if (!confirm("Are you sure you want to delete this student?")) return;
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/students/${id}`, {
+      const res = await fetch(`https://mern-backend-mzup.onrender.com/api/students/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -50,7 +50,7 @@ export default function AdminDashboard() {
   const updateStudent = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/students/update/${id}`, {
+      const res = await fetch(`https://mern-backend-mzup.onrender.com/api/students/update/${id}`, {
         method: "PUT",
         headers: { 
           "Content-Type": "application/json",

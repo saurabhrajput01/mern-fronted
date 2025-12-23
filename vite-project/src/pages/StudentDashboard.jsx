@@ -14,7 +14,7 @@ export default function StudentDashboard() {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/students/profile", {
+      const res = await fetch("https://mern-backend-mzup.onrender.com/api/students/profile", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -32,7 +32,7 @@ export default function StudentDashboard() {
   const updateProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/students/profile", {
+      const res = await fetch("https://mern-backend-mzup.onrender.com/api/students/profile", {
         method: "PUT",
         headers: { 
           "Content-Type": "application/json",
